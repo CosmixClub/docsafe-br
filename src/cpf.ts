@@ -38,7 +38,7 @@ export function isValidCPF(cpf: string): boolean {
 			.reduce((total, num, index) => total + Number(num) * (factor - index), 0);
 
 		// O dígito é o resto da divisão por 11, ajustado conforme a regra da Receita Federal
-		return (sum * 10) % 11 % 10;
+		return ((sum * 10) % 11) % 10;
 	};
 
 	// Calcula os dois dígitos verificadores
